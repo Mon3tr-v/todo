@@ -1,0 +1,10 @@
+build/bin
+node_modules
+frontend/dist
+frontend/package.json.md5
+frontend/test-results
+frontend/playwright-report
+build/windows/installer/tmp
+.env
+.env.*
+!.env.example
