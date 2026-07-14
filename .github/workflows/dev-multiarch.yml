@@ -60,7 +60,9 @@ jobs:
 
       - name: Run browser tests
         working-directory: frontend
-        run: npm run test:e2e
+        # The repository stores Windows baselines. Linux CI still runs every
+        # functional assertion and generates runner-local screenshots.
+        run: npm run test:e2e -- --update-snapshots
 
   publish-server:
     name: Publish server image
