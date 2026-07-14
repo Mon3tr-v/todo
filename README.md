@@ -100,3 +100,14 @@ linux/arm64
 ```
 
 Compose 默认使用这个 dev 镜像。需要本地重新构建时仍可运行 `docker compose up -d --build`，也可以通过 `TODO_SERVER_IMAGE` 指定其他标签。
+
+## 桌面预发布安装包
+
+推送 `v*` 标签后，GitHub Actions 会在对应平台生成并上传预发布安装包：
+
+- Windows amd64/arm64：便携 EXE 和 NSIS 安装器。
+- Linux amd64/arm64：Debian 安装包和便携 tar.gz。
+- macOS amd64/arm64：DMG 和 `.app.zip`。
+- Release 同时包含 `SHA256SUMS.txt`，用于验证下载文件。
+
+这些 dev 产物没有商业代码签名或 Apple 公证。Windows SmartScreen 和 macOS Gatekeeper 可能显示未知发布者提示。
